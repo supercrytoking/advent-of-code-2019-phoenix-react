@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+  - 1.9
+otp_release:
+  - 22.0
+sudo: false
+env:
+  global:
+    - ELIXIR_ASSERT_TIMEOUT=2000
+before_script:
+  - mix deps.get
+script:
+  - make test
+# not really used now, but good to remember:
+cache:
+  directories:
+  - assets/node_modules
